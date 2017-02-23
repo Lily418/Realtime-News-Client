@@ -1,5 +1,6 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
+import { configurePusher } from 'pusher-redux';
 import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
@@ -35,6 +36,12 @@ export default (initialState = {}) => {
       ...enhancers
     )
   )
+
+  configurePusher(store, '225c4d4fcbad973ae764', {
+      cluster: 'eu',
+      encrypted: true
+    })
+
   store.asyncReducers = {}
 
   // To unsubscribe, invoke `store.unsubscribeHistory()` anytime
