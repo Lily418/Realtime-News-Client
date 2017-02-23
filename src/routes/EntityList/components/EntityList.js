@@ -1,9 +1,9 @@
 import React from 'react'
 import { subscribe, unsubscribe } from 'pusher-redux';
-import { ENTITY_LIST_UPDATED } from '../modules/counter'
+import { ENTITY_LIST_UPDATED } from '../modules/entityList'
 
 
-export class Counter extends React.Component {
+export class EntityList extends React.Component {
   constructor(props, context) {
   super(props, context);
   this.subscribe = this.subscribe.bind(this);
@@ -37,4 +37,4 @@ export class Counter extends React.Component {
 
 }
 
-export default Counter
+export default EntityList
