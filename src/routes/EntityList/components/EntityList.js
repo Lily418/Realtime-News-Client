@@ -1,6 +1,7 @@
 import React from 'react'
 import { subscribe, unsubscribe } from 'pusher-redux';
 import { ENTITY_LIST_UPDATED } from '../modules/entityList'
+import './EntityList.scss'
 
 
 export class EntityList extends React.Component {
@@ -27,8 +28,7 @@ export class EntityList extends React.Component {
   }
 
   render() {
-    return (<div>
-            <h1>The news is currently talking about</h1>
+    return (<div className="entity-list">
               <ul>
                 {this.props.entities.map((entity)=> { return (<li> {entity} </li>)})}
               </ul>
