@@ -6,3 +6,20 @@
   color: #33658A;
   padding: 8px;
 }
+
+li.new-entity {
+  animation-duration: 60s;
+  animation-name: newentity;
+}
+
+@keyframes newentity {
+  from {
+    background: #CEEFE0;
+    color: black;
+  }
+
+  to {
+    background-color: #CEE0ED;
+    color: #33658A;
+  }
+}

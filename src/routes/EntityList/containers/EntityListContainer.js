@@ -7,7 +7,12 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  entities : state.entityList.entities
+  entities : state.entityList.entities.map((entity, index) => {
+      return {
+        'entityName' : entity,
+        'isNewEntity' : state.entityList.newEntities[index]
+      }
+    })
 })
 
 

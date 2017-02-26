@@ -30,7 +30,9 @@ export class EntityList extends React.Component {
   render() {
     return (<div className="entity-list">
               <ul>
-                {this.props.entities.map((entity)=> { return (<li> {entity} </li>)})}
+                {this.props.entities.map((entity, index)=> { 
+                  return (<li className={entity.isNewEntity ? 'new-entity' : ''}> {entity.entityName} </li>)
+                })}
               </ul>
             </div>)
   }
