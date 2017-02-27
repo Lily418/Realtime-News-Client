@@ -14,7 +14,7 @@ const initialState = {
 
 export function getEntities() {
   return (dispatch) => {
-    var request = new Request('http://127.0.0.1:9001/current-entities');
+    var request = new Request(`${__CURRENT_ENTITIES_API_LOCATION__}`);
 
     return fetch(request).then((response) => {
         return response.json()

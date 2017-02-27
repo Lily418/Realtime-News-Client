@@ -83,7 +83,8 @@ config.globals = {
   '__PROD__'     : config.env === 'production',
   '__TEST__'     : config.env === 'test',
   '__COVERAGE__' : !argv.watch && config.env === 'test',
-  '__BASENAME__' : JSON.stringify(process.env.BASENAME || '')
+  '__BASENAME__' : JSON.stringify(process.env.BASENAME || ''),
+  '__CURRENT_ENTITIES_API_LOCATION__' : JSON.stringify('http://127.0.0.1:9001/current-entities')
 }
 
 // ------------------------------------
