@@ -17,7 +17,8 @@
     "__TEST__"     : false,
     "__PROD__"     : false,
     "__COVERAGE__" : false,
-    "__CURRENT_ENTITIES_API_LOCATION__" : false
+    "__CURRENT_ENTITIES_API_LOCATION__" : false,
+    "__PUSHER_API_KEY__" : false
   },
   "rules": {
     "key-spacing"          : 0,

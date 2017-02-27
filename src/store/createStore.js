@@ -37,7 +37,7 @@ export default (initialState = {}) => {
     )
   )
 
-  configurePusher(store, '225c4d4fcbad973ae764', {
+  configurePusher(store, __PUSHER_API_KEY__, {
       cluster: 'eu',
       encrypted: true
     })
