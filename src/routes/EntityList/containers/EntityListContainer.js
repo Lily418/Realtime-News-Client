@@ -2,8 +2,11 @@ import { connect } from 'react-redux'
 
 import EntityList from '../components/EntityList'
 
+import { getEntities } from '../modules/entityList'
+
 
 const mapDispatchToProps = {
+  'getEntities' : () => getEntities()
 }
 
 const mapStateToProps = (state) => ({

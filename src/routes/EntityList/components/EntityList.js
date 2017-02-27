@@ -12,6 +12,7 @@ export class EntityList extends React.Component {
   }
 
   componentWillMount() {
+    this.props.getEntities()
     this.subscribe();
   }
   
@@ -20,7 +21,7 @@ export class EntityList extends React.Component {
   }
 
   subscribe() {
-  subscribe('articles-channel', 'entity-list-updated', ENTITY_LIST_UPDATED);
+    subscribe('articles-channel', 'entity-list-updated', ENTITY_LIST_UPDATED);
   }
 
   unsubscribe() {

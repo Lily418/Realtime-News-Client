@@ -1,3 +1,4 @@
+import 'isomorphic-fetch'
 // ------------------------------------
 // Constants
 // ------------------------------------
@@ -9,6 +10,19 @@ export const ENTITY_LIST_UPDATED = 'ENTITY_LIST_UPDATED'
 const initialState = {
   'entities' : [],
   'newEntities' : []
+}
+
+export function getEntities() {
+  return (dispatch) => {
+    var request = new Request('http://127.0.0.1:9001/current-entities');
+
+    return fetch(request).then((response) => {
+        return response.json()
+      }).then((json) => {
+        dispatch({'type' : ENTITY_LIST_UPDATED, 'data' : json})
+      })
+  }
+
 }
 
 function calculateNewEntities(oldEntityList, newEntityList) {
