@@ -1,6 +1,6 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
-import { configurePusher } from 'pusher-redux';
+import { configurePusher } from 'pusher-redux'
 import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
@@ -38,9 +38,9 @@ export default (initialState = {}) => {
   )
 
   configurePusher(store, __PUSHER_API_KEY__, {
-      cluster: 'eu',
-      encrypted: true
-    })
+    cluster: 'eu',
+    encrypted: true
+  })
 
   store.asyncReducers = {}
 

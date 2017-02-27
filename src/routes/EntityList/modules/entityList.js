@@ -12,28 +12,26 @@ const initialState = {
   'newEntities' : []
 }
 
-export function getEntities() {
+export function getEntities () {
   return (dispatch) => {
-    var request = new Request(`${__CURRENT_ENTITIES_API_LOCATION__}/current-entities`);
+    var request = new Request(`${__CURRENT_ENTITIES_API_LOCATION__}/current-entities`)
 
     return fetch(request).then((response) => {
-        return response.json()
-      }).then((json) => {
-        dispatch({'type' : ENTITY_LIST_UPDATED, 'data' : json})
-      })
+      return response.json()
+    }).then((json) => {
+      dispatch({ 'type' : ENTITY_LIST_UPDATED, 'data' : json })
+    })
   }
-
 }
 
-function calculateNewEntities(oldEntityList, newEntityList) {
+function calculateNewEntities (oldEntityList, newEntityList) {
   return newEntityList.map((newEntity) => {
     return !oldEntityList.includes(newEntity)
   })
 }
 
-
 export default function entityListReducer (state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case ENTITY_LIST_UPDATED: return Object.assign({}, state, {
       'entities' : action.data.entities,
       'newEntities' : calculateNewEntities(state.entities, action.data.entities)
