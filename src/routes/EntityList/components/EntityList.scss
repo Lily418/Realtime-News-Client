@@ -1,14 +1,17 @@
+$tag-background-color: #CEE0ED;
+$tag-color: #33658A;
+
 .entity-list li {
   display: inline-block;
   font-size: 1em;
   margin: 8px;
-  background-color: #CEE0ED;
-  color: #33658A;
+  background-color: $tag-background-color;
+  color: $tag-color;
   padding: 8px;
 }
 
 li.new-entity {
-  animation-duration: 300s;
+  animation-duration: 10s;
   animation-name: newentity;
 }
 
@@ -19,7 +22,7 @@ li.new-entity {
   }
 
   to {
-    background-color: #CEE0ED;
-    color: #33658A;
+    background-color: $tag-background-color;
+    color: $tag-color;
   }
 }
